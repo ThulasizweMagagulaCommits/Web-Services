@@ -38,11 +38,11 @@ $result=null;
 
 if(isset($_POST['submit_button'])){
 
-// Making a SOAP call for the celciusToFahrenheit function	
+// Catch input variables after submit button pressed
 $param_value = array('degrees'=>$_POST['temp_value']);
 $param_value['conversion']=$_POST['conversion_type'];
 
-//$param_conversion = $_POST['conversion_type'];
+//Determine conversion type and make call to method;
 	if($param_value['conversion']=="c_to_f"){
 		$response = $client->__soapCall('celciusToFahrenheit', $param_value);
 		//$result=var_dump($response);

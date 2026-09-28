@@ -1,3 +1,9 @@
+<!--
+Simple Temperature conversion SOAP web service WSDL converts Degress Celsius to Fahrenheit and vice versa - Junior Php Developer Portfolio
+Author: Thulasizwe Magagula
+Purpose: Web Services - Simple Temperature conversion SOAP web service WSDL converts Degress Celsius to Fahrenheit and vice versa
+Demonstrates working with php, SOAP web Services, HTML, XML
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 
 -<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="TemparatureConverter" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="TemparatureConverter" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TemparatureConverter">

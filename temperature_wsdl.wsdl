@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="TemparatureConverter" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="TemparatureConverter" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TemparatureConverter">
+
+<xsd:documentation/>
+
+
+-<wsdl:message name="celciusToFahrenheitRequest">
+
+<wsdl:part name="celcius" type="tns:string"/>
+
+</wsdl:message>
+
+
+-<wsdl:message name="celciusToFahrenheitResponse">
+
+<wsdl:part name="answer" type="tns:integer"/>
+
+</wsdl:message>
+
+
+-<wsdl:message name="fahrenheitToCelciusRequest">
+
+<wsdl:part name="fahrenheit" type="tns:string"/>
+
+</wsdl:message>
+
+
+-<wsdl:message name="fahrenheitToCelciusResponse">
+
+<wsdl:part name="answer" type="tns:integer"/>
+
+</wsdl:message>
+
+
+-<wsdl:portType name="TemparatureConverter">
+
+
+-<wsdl:operation name="celciusToFahrenheit">
+
+<wsdl:input message="tns:celciusToFahrenheitRequest"/>
+
+<wsdl:output message="tns:celciusToFahrenheitResponse"/>
+
+</wsdl:operation>
+
+
+-<wsdl:operation name="fahrenheitToCelcius">
+
+<wsdl:input message="tns:fahrenheitToCelciusRequest"/>
+
+<wsdl:output message="tns:fahrenheitToCelciusResponse"/>
+
+</wsdl:operation>
+
+</wsdl:portType>
+
+
+-<wsdl:binding name="TemparatureConverter" type="tns:TemparatureConverter">
+
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+
+
+-<wsdl:operation name="celciusToFahrenheit">
+
+<soap:operation soapAction="http://localhost/soap/temparature_server.php"/>
+
+
+-<wsdl:input>
+
+<soap:body namespace="Library" use="literal"/>
+
+</wsdl:input>
+
+
+-<wsdl:output>
+
+<soap:body namespace="Library" use="literal"/>
+
+</wsdl:output>
+
+</wsdl:operation>
+
+
+-<wsdl:operation name="fahrenheitToCelcius">
+
+<soap:operation soapAction="http://localhost/soap/temparature_server.php"/>
+
+
+-<wsdl:input>
+
+<soap:body namespace="Library" use="literal"/>
+
+</wsdl:input>
+
+
+-<wsdl:output>
+
+<soap:body namespace="Library" use="literal"/>
+
+</wsdl:output>
+
+</wsdl:operation>
+
+</wsdl:binding>
+
+
+-<wsdl:service name="TemparatureConverter">
+
+
+-<wsdl:port name="TemparatureConverter" binding="tns:TemparatureConverter">
+
+<soap:address location="http://localhost/soap/temparature_server.php"/>
+
+</wsdl:port>
+
+</wsdl:service>
+
+</wsdl:definitions>
